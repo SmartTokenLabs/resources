@@ -25082,23 +25082,6 @@ input, textarea {
 				<ts:viewContent name="common"/>
 			</ts:view>
 		</ts:card>
-
-		<ts:card buttonClass="secondary" name="Send" origins="Token" type="action">
-			<ts:label>
-				<ts:string xml:lang="en">Send Tokens</ts:string>
-			</ts:label>
-			<ts:transaction>
-				<ethereum:transaction as="uint" contract="Token" function="transfer">
-					<ts:data>
-						<ts:address ref="receivingAccountAddress"/>
-						<ts:uint256 ref="receivingAmount"/>
-					</ts:data>
-				</ethereum:transaction>
-			</ts:transaction>
-			<ts:view xmlns="http://www.w3.org/1999/xhtml" uiButton="false" urlFragment="send" xml:lang="en">
-				<ts:viewContent name="common"/>
-			</ts:view>
-		</ts:card>
 		
 		<ts:card buttonClass="secondary" name="Send20" origins="Token20" type="action">
 			<ts:label>
