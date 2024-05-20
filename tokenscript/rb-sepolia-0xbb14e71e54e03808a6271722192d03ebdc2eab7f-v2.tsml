@@ -11,16 +11,12 @@
 		<ts:iconUrl xml:lang="en">https://cdn.jsdelivr.net/gh/SmartTokenLabs/resources/redbrick-logo.svg</ts:iconUrl>
 	</ts:meta>
 	<ts:contract interface="erc721" name="Token">
-		<ts:address network="137">0xf925027b8c521939f25ce633fefd7777a1660d86</ts:address>
 		
-		
-		
+		<ts:address network="11155111">0xbb14e71e54e03808a6271722192d03ebdc2eab7f</ts:address>
 	</ts:contract>
 	<ts:contract interface="erc20" name="Token20">
-	<ts:address network="137">0xf925027b8c521939f25ce633fefd7777a1660d86</ts:address>
-		
-		
-		
+	
+		<ts:address network="11155111">0xbb14e71e54e03808a6271722192d03ebdc2eab7f</ts:address>
 	</ts:contract>
 	<ts:origins>
 		
@@ -23700,14 +23696,8 @@ function instance$2($$self, $$props, $$invalidate) {
   let receivingAccountAddressViewValue;
   let ensNameNotFound;
   let ensNameAvatarImage;
-  let tokenBalanceAndData;
   async function getOwnerTokenBalance2() {
-    const tokenAddress = "0xf925027b8c521939f25ce633fefd7777a1660d86";
-    const chainName = "polygon";
-    const tokenBalanceRequest = await fetch(`https://api.token-discovery.tokenscript.org/get-owner-fungible-tokens?blockchain=evm&amp;owner=${token.ownerAddress}&amp;chain=${chainName}&amp;collectionAddress=${tokenAddress}`);
-    const resp = await tokenBalanceRequest.json();
-    tokenBalanceAndData = resp[0].data;
-    $$invalidate(1, tokenAmount = formatTokenBalance(tokenBalanceAndData.balance, tokenBalanceAndData.decimals));
+    $$invalidate(1, tokenAmount = Number(formatTokenBalance(token.balance, token.decimals)));
   }
   context.data.subscribe(async (value) =&gt; {
     if (!value.token)
