@@ -22553,8 +22553,7 @@ function instance$3($$self, $$props, $$invalidate) {
   function updateWeb3Props() {
     web3.action.setProps({
       sendingAccountAddress: token.ownerAddress,
-      receivingAccountAddress,
-      tokenId: token.tokenId
+      receivingAccountAddress
     });
     validateForm();
   }
@@ -25168,19 +25167,6 @@ input, textarea {
 		</ts:label>
 		<ts:origins>
 			<ts:user-entry as="uint"/>
-		</ts:origins>
-	</ts:attribute>
-
-	<ts:attribute name="tokenId">
-		<ts:type>
-			<ts:syntax/>
-		</ts:type>
-		<ts:origins>
-			<ethereum:call as="uint" contract="Token" function="tokenId">
-				<ts:data>
-					<ts:uint256 ref="tokenId"/>
-				</ts:data>
-			</ethereum:call>
 		</ts:origins>
 	</ts:attribute>
 
