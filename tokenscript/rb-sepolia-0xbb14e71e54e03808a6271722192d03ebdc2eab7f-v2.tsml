@@ -11,12 +11,14 @@
 		<ts:iconUrl xml:lang="en">https://cdn.jsdelivr.net/gh/SmartTokenLabs/resources/redbrick-logo.svg</ts:iconUrl>
 	</ts:meta>
 	<ts:contract interface="erc721" name="Token">
-		<ts:address network="11155111">0xbb14e71e54e03808a6271722192d03ebdc2eab7f</ts:address>
+		<ts:address network="137">0xf925027b8c521939f25ce633fefd7777a1660d86</ts:address>
+		
 		
 		
 	</ts:contract>
 	<ts:contract interface="erc20" name="Token20">
-		<ts:address network="11155111">0xbb14e71e54e03808a6271722192d03ebdc2eab7f</ts:address>
+	<ts:address network="137">0xf925027b8c521939f25ce633fefd7777a1660d86</ts:address>
+		
 		
 		
 	</ts:contract>
@@ -20902,12 +20904,10 @@ async function getOwnerTokenBalance(chainId, ownerAddress, contractAddress) {
     `https://api.token-discovery.tokenscript.org/get-owner-fungible-tokens?blockchain=evm&amp;owner=${ownerAddress}&amp;chain=${tokenDiscoveryChainRef}&amp;collectionAddress=${contractAddress}`
   );
   const resp = await tokenBalanceRequest.json();
+  if (!resp || !resp.length)
+    return 0;
   const tokenBalanceAndData = resp[0].data;
-  const balance = Number(formatTokenBalance(tokenBalanceAndData.balance, tokenBalanceAndData.decimals));
-  return {
-    balance,
-    tokenBalanceAndData
-  };
+  return Number(formatTokenBalance(tokenBalanceAndData.balance, tokenBalanceAndData.decimals));
 }
 const chainConfig = {
   1: {
@@ -21877,21 +21877,20 @@ function create_if_block_2$2(ctx) {
   let t4;
   let t5;
   let div3;
-  let t6;
-  let t7_value = previewAddr(
+  let t6_value = previewAddr(
     /*token*/
     ctx[0].tokenId ? (
       /*token*/
       ctx[0].tokenId.toString()
     ) : ""
   ) + "";
+  let t6;
   let t7;
-  let t8;
   let div7;
-  let t10;
+  let t9;
   let textarea;
+  let t10;
   let t11;
-  let t12;
   let show_if = (
     /*loading*/
     ctx[1] === false &amp;&amp; /*receivingAccountAddress*/
@@ -21900,11 +21899,11 @@ function create_if_block_2$2(ctx) {
       ctx[2]
     )
   );
+  let t12;
   let t13;
-  let t14;
   let div10;
   let button;
-  let t15;
+  let t14;
   let mounted;
   let dispose;
   let if_block0 = (
@@ -21923,7 +21922,7 @@ function create_if_block_2$2(ctx) {
     c() {
       div9 = element("div");
       div1 = element("div");
-      div1.innerHTML = `&lt;div class="field-section-title" style="font-size: 24px;"&gt;Transfer Tokens&lt;/div&gt;`;
+      div1.innerHTML = `&lt;div class="field-section-title" style="font-size: 24px;"&gt;Transfer NFT&lt;/div&gt;`;
       t1 = space();
       div8 = element("div");
       t2 = text("NFT\n					");
@@ -21936,26 +21935,25 @@ function create_if_block_2$2(ctx) {
       t4 = text(t4_value);
       t5 = space();
       div3 = element("div");
-      t6 = text("RedBrick Pass ");
-      t7 = text(t7_value);
-      t8 = space();
+      t6 = text(t6_value);
+      t7 = space();
       div7 = element("div");
       div7.textContent = "Recipient address";
-      t10 = space();
+      t9 = space();
       textarea = element("textarea");
-      t11 = space();
+      t10 = space();
       if (if_block0)
         if_block0.c();
-      t12 = space();
+      t11 = space();
       if (if_block1)
         if_block1.c();
-      t13 = space();
+      t12 = space();
       if (if_block2)
         if_block2.c();
-      t14 = space();
+      t13 = space();
       div10 = element("div");
       button = element("button");
-      t15 = text("Review");
+      t14 = text("Review");
       attr(div1, "class", "field-section");
       attr(img, "alt", "token");
       attr(img, "class", "h-20 w-20 m-2 mr-5 rounded-lg");
@@ -22001,29 +21999,28 @@ function create_if_block_2$2(ctx) {
       append(div4, t5);
       append(div4, div3);
       append(div3, t6);
-      append(div3, t7);
-      append(div8, t8);
+      append(div8, t7);
       append(div8, div7);
-      append(div8, t10);
+      append(div8, t9);
       append(div8, textarea);
       set_input_value(
         textarea,
         /*receivingAccountAddressViewValue*/
         ctx[6]
       );
-      append(div8, t11);
+      append(div8, t10);
       if (if_block0)
         if_block0.m(div8, null);
-      append(div8, t12);
+      append(div8, t11);
       if (if_block1)
         if_block1.m(div8, null);
-      append(div8, t13);
+      append(div8, t12);
       if (if_block2)
         if_block2.m(div8, null);
-      insert(target, t14, anchor);
+      insert(target, t13, anchor);
       insert(target, div10, anchor);
       append(div10, button);
-      append(button, t15);
+      append(button, t14);
       if (!mounted) {
         dispose = [
           listen(
@@ -22062,14 +22059,14 @@ function create_if_block_2$2(ctx) {
       ) : "Token id not found"))
         set_data(t4, t4_value);
       if (dirty &amp; /*token*/
-      1 &amp;&amp; t7_value !== (t7_value = previewAddr(
+      1 &amp;&amp; t6_value !== (t6_value = previewAddr(
         /*token*/
         ctx2[0].tokenId ? (
           /*token*/
           ctx2[0].tokenId.toString()
         ) : ""
       ) + ""))
-        set_data(t7, t7_value);
+        set_data(t6, t6_value);
       if (dirty &amp; /*receivingAccountAddressViewValue*/
       64) {
         set_input_value(
@@ -22090,7 +22087,7 @@ function create_if_block_2$2(ctx) {
         } else {
           if_block0 = create_if_block_5$2(ctx2);
           if_block0.c();
-          if_block0.m(div8, t12);
+          if_block0.m(div8, t11);
         }
       } else if (if_block0) {
         if_block0.d(1);
@@ -22110,7 +22107,7 @@ function create_if_block_2$2(ctx) {
         else {
           if_block1 = create_if_block_4$2();
           if_block1.c();
-          if_block1.m(div8, t13);
+          if_block1.m(div8, t12);
         }
       } else if (if_block1) {
         if_block1.d(1);
@@ -22140,7 +22137,7 @@ function create_if_block_2$2(ctx) {
     d(detaching) {
       if (detaching) {
         detach(div9);
-        detach(t14);
+        detach(t13);
         detach(div10);
       }
       if (if_block0)
@@ -22300,7 +22297,7 @@ function create_if_block_1$2(ctx) {
       div2.textContent = "Send";
       t5 = space();
       div3 = element("div");
-      t6 = text("Redbrick Pass #");
+      t6 = text("#");
       t7 = text(t7_value);
       t8 = space();
       div7 = element("div");
@@ -23567,6 +23564,7 @@ function create_if_block_3$1(ctx) {
       set_style(div1, "border-radius", "8px");
       set_style(div1, "border", "1px solid #fe635a");
       set_style(div1, "margin-top", "34px");
+      set_style(div1, "margin-bottom", "34px");
       set_style(div1, "color", "black");
       set_style(div1, "padding", "16px");
     },
@@ -23591,6 +23589,7 @@ function create_if_block_2$1(ctx) {
       set_style(div1, "background", "#ffeff1");
       set_style(div1, "border-radius", "8px");
       set_style(div1, "border", "1px solid #fe635a");
+      set_style(div1, "margin-bottom", "34px");
       set_style(div1, "margin-top", "34px");
       set_style(div1, "color", "black");
       set_style(div1, "padding", "16px");
@@ -23703,8 +23702,8 @@ function instance$2($$self, $$props, $$invalidate) {
   let ensNameAvatarImage;
   let tokenBalanceAndData;
   async function getOwnerTokenBalance2() {
-    const tokenAddress = "0xbb14e71e54e03808a6271722192d03ebdc2eab7f";
-    const chainName = (token == null ? void 0 : token.chainId) === 11155111 ? "Sepolia" : "eth";
+    const tokenAddress = "0xf925027b8c521939f25ce633fefd7777a1660d86";
+    const chainName = "polygon";
     const tokenBalanceRequest = await fetch(`https://api.token-discovery.tokenscript.org/get-owner-fungible-tokens?blockchain=evm&amp;owner=${token.ownerAddress}&amp;chain=${chainName}&amp;collectionAddress=${tokenAddress}`);
     const resp = await tokenBalanceRequest.json();
     tokenBalanceAndData = resp[0].data;
@@ -24070,7 +24069,7 @@ function create_if_block(ctx) {
       t48 = text(t48_value);
       t49 = space();
       div42 = element("div");
-      div42.innerHTML = `&lt;div class="field-title-alt text-sm text-gray-400"&gt;Release Date&lt;/div&gt; &lt;div class="text-md font-semibold"&gt;May \`24\`&lt;/div&gt;`;
+      div42.innerHTML = `&lt;div class="field-title-alt text-sm text-gray-400"&gt;Release Date&lt;/div&gt; &lt;div class="text-md font-semibold"&gt;May \`24&lt;/div&gt;`;
       attr(div1, "class", "field-section");
       attr(div2, "class", "text-sm text-gray-400");
       attr(div3, "class", "text-md font-semibold field-value");
@@ -24109,7 +24108,7 @@ function create_if_block(ctx) {
         attr(img1, "src", img1_src_value);
       attr(div38, "class", "text-md font-semibold flex align-middle");
       attr(div39, "class", "mt-4");
-      attr(div42, "class", "mt-4");
+      attr(div42, "class", "mt-4 mb-8");
       attr(div43, "class", "p-6");
     },
     m(target, anchor) {
@@ -24358,9 +24357,15 @@ function create_if_block_6(ctx) {
   };
 }
 function create_if_block_5(ctx) {
+  var _a2;
   let t_value = (
-    /*nftFloorPriceInfo*/
-    (ctx[8] ?? "-") + ""
+    /*nftFloorPrice*/
+    ctx[8] &amp;&amp; /*chainData*/
+    ctx[9].name ? (
+      /*nftStats*/
+      ctx[7].floorPrice + " " + /*chainData*/
+      ((_a2 = ctx[9]) == null ? void 0 : _a2.name)
+    ) : "-"
   );
   let t;
   return {
@@ -24371,9 +24376,15 @@ function create_if_block_5(ctx) {
       insert(target, t, anchor);
     },
     p(ctx2, dirty) {
-      if (dirty &amp; /*nftFloorPriceInfo*/
-      256 &amp;&amp; t_value !== (t_value = /*nftFloorPriceInfo*/
-      (ctx2[8] ?? "-") + ""))
+      var _a3;
+      if (dirty &amp; /*nftFloorPrice, chainData, nftStats*/
+      896 &amp;&amp; t_value !== (t_value = /*nftFloorPrice*/
+      ctx2[8] &amp;&amp; /*chainData*/
+      ctx2[9].name ? (
+        /*nftStats*/
+        ctx2[7].floorPrice + " " + /*chainData*/
+        ((_a3 = ctx2[9]) == null ? void 0 : _a3.name)
+      ) : "-"))
         set_data(t, t_value);
     },
     d(detaching) {
@@ -24551,6 +24562,10 @@ function create_fragment$2(ctx) {
     }
   };
 }
+async function setPolygonPriceEvm() {
+  const polygonPriceRequest = await fetch(`https://api.token-discovery.tokenscript.org/get-token-price?blockchain=evm&amp;smartContract=0x455e53CBB86018Ac2B8092FdCd39d8444aFFC3F6&amp;chain=eth`);
+  return polygonPriceRequest.json();
+}
 function instance$1($$self, $$props, $$invalidate) {
   let token;
   let tokenStats;
@@ -24561,39 +24576,47 @@ function instance$1($$self, $$props, $$invalidate) {
   let userTokenAccountValueUsd;
   let tokenBalance;
   let nftStats;
-  let nftFloorPriceInfo;
+  let nftFloorPrice;
   let chainData;
-  let tokenBalanceData;
   context.data.subscribe(async (value) =&gt; {
     if (!value.token)
       return;
     $$invalidate(0, token = value.token);
     $$invalidate(9, chainData = chainConfig[Number(token.chainId)]);
-    tokenBalanceData = await getOwnerTokenBalance(
-      token.chainId,
-      token.ownerAddress,
-      // @ts-ignore
-      token.contractAddress
-    );
-    $$invalidate(6, tokenBalance = tokenBalanceData.balance ? Number(tokenBalanceData.balance) : void 0);
-    await setTokenPriceData();
+    if (token.balance &amp;&amp; token.decimals) {
+      $$invalidate(6, tokenBalance = Number(formatTokenBalance(token.balance, token.decimals)));
+    } else {
+      $$invalidate(6, tokenBalance = await getOwnerTokenBalance(
+        token.chainId,
+        token.ownerAddress,
+        // @ts-ignore
+        token.contractAddress
+      ));
+    }
     await setNftPriceData();
+    await setTokenPriceData();
     $$invalidate(1, loading = false);
   });
   async function setNftPriceData() {
-    const nftStatsRequest = await fetch(`https://api.token-discovery.tokenscript.org/get-token-stats?blockchain=evm&amp;smartContract=0xbb14e71e54e03808a6271722192d03ebdc2eab7f&amp;chain=polygon`);
+    const nftStatsRequest = await fetch(`https://api.token-discovery.tokenscript.org/get-token-stats?blockchain=evm&amp;smartContract=0xf925027b8c521939f25ce633fefd7777a1660d86&amp;chain=polygon&amp;openSeaSlug=brc-id`);
     $$invalidate(7, nftStats = await nftStatsRequest.json());
-    $$invalidate(8, nftFloorPriceInfo = (nftStats == null ? void 0 : nftStats.floorPrice) ? `${nftStats.floorPrice} ${(chainData == null ? void 0 : chainData.name) ?? ""}` : void 0);
+    $$invalidate(8, nftFloorPrice = nftStats == null ? void 0 : nftStats.floorPrice);
   }
   async function setTokenPriceData() {
-    const tokenStatsRequest = await fetch(`https://api.token-discovery.tokenscript.org/get-token-price?blockchain=evm&amp;smartContract=0xbb14e71e54e03808a6271722192d03ebdc2eab7f&amp;chain=polygon`);
+    const tokenStatsRequest = await fetch(`https://api.token-discovery.tokenscript.org/get-token-price?blockchain=evm&amp;smartContract=0xf925027b8c521939f25ce633fefd7777a1660d86&amp;chain=polygon`);
     tokenStats = await tokenStatsRequest.json();
-    if (tokenStats.value &amp;&amp; tokenStats.usdPrice) {
-      $$invalidate(2, tokenStatsPriceEth = tokenStats.value);
-      $$invalidate(3, tokenStatsPriceUsd = tokenStats.usdPrice);
-      if (tokenBalance &amp;&amp; tokenStats.value &amp;&amp; tokenStats.usdPrice) {
-        $$invalidate(4, userTokenAccountValueEth = tokenStats.value * tokenBalance);
-        $$invalidate(5, userTokenAccountValueUsd = tokenStats.usdPrice * tokenBalance);
+    $$invalidate(2, tokenStatsPriceEth = tokenStats.value ?? nftFloorPrice);
+    $$invalidate(3, tokenStatsPriceUsd = tokenStats.usdPrice);
+    if (tokenStatsPriceEth &amp;&amp; tokenBalance) {
+      $$invalidate(4, userTokenAccountValueEth = Number(tokenStatsPriceEth) * tokenBalance);
+    }
+    if (tokenStatsPriceUsd &amp;&amp; tokenBalance) {
+      $$invalidate(5, userTokenAccountValueUsd = Number(tokenStatsPriceUsd) * tokenBalance);
+    } else {
+      const polygonPriceData = await setPolygonPriceEvm();
+      if ((polygonPriceData == null ? void 0 : polygonPriceData.usdPrice) &amp;&amp; userTokenAccountValueEth) {
+        $$invalidate(5, userTokenAccountValueUsd = Number(polygonPriceData == null ? void 0 : polygonPriceData.usdPrice) * Number(userTokenAccountValueEth));
+        $$invalidate(3, tokenStatsPriceUsd = Number(nftFloorPrice) * Number(polygonPriceData == null ? void 0 : polygonPriceData.usdPrice));
       }
     }
   }
@@ -24606,7 +24629,7 @@ function instance$1($$self, $$props, $$invalidate) {
     userTokenAccountValueUsd,
     tokenBalance,
     nftStats,
-    nftFloorPriceInfo,
+    nftFloorPrice,
     chainData
   ];
 }
@@ -25054,7 +25077,7 @@ input, textarea {
 					/* ]]> */
 				</style></ts:viewContent>
 
-		<ts:card name="Account" origins="Token" type="token">
+		<ts:card buttonClass="primary" name="Account" origins="Token" type="token">
 			<ts:label>
 				<ts:string xml:lang="en">My account</ts:string>
 			</ts:label>
@@ -25063,7 +25086,7 @@ input, textarea {
 			</ts:view>
 		</ts:card>
 
-		<ts:card buttonClass="primary" name="Market" origins="Token" type="token">
+		<ts:card buttonClass="secondary" name="Market" origins="Token" type="token">
 			<ts:label>
 				<ts:string xml:lang="en">Market Stats</ts:string>
 			</ts:label>
@@ -25077,23 +25100,6 @@ input, textarea {
 				<ts:string xml:lang="en">Market Stats</ts:string>
 			</ts:label>
 			<ts:view xmlns="http://www.w3.org/1999/xhtml" urlFragment="market" xml:lang="en">
-				<ts:viewContent name="common"/>
-			</ts:view>
-		</ts:card>
-
-		<ts:card buttonClass="secondary" name="Send" origins="Token" type="action">
-			<ts:label>
-				<ts:string xml:lang="en">Send Tokens</ts:string>
-			</ts:label>
-			<ts:transaction>
-				<ethereum:transaction as="uint" contract="Token" function="transfer">
-					<ts:data>
-						<ts:address ref="receivingAccountAddress"/>
-						<ts:uint256 ref="receivingAmount"/>
-					</ts:data>
-				</ethereum:transaction>
-			</ts:transaction>
-			<ts:view xmlns="http://www.w3.org/1999/xhtml" uiButton="false" urlFragment="send" xml:lang="en">
 				<ts:viewContent name="common"/>
 			</ts:view>
 		</ts:card>
@@ -25115,7 +25121,7 @@ input, textarea {
 			</ts:view>
 		</ts:card>
 		
-		<ts:card name="Transfer" origins="Token" type="action">
+		<ts:card buttonClass="secondary" name="Transfer" origins="Token" type="action">
 
 			<ts:label>
 				<ts:string xml:lang="en">Transfer NFT</ts:string>
