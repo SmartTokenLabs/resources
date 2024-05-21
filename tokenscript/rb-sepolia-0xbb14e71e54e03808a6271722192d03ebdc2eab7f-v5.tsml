@@ -23900,7 +23900,7 @@ function create_if_block_2$1(ctx) {
       set_style(div1, "background", "#ffeff1");
       set_style(div1, "border-radius", "8px");
       set_style(div1, "border", "1px solid #fe635a");
-      set_style(div1, "margin-bottom", "34px");
+      set_style(div1, "margin-bottom", "100px");
       set_style(div1, "margin-top", "34px");
       set_style(div1, "color", "black");
       set_style(div1, "padding", "16px");
@@ -24156,7 +24156,7 @@ class Send extends SvelteComponent {
   }
 }
 function create_if_block(ctx) {
-  var _a2, _b;
+  var _a2;
   let div16;
   let div1;
   let t1;
@@ -24190,79 +24190,44 @@ function create_if_block(ctx) {
   let t11;
   let div11;
   let div9;
-  let t12;
-  let t13_value = (
-    /*chainData*/
-    (((_b = ctx[9]) == null ? void 0 : _b.name) ?? "") + ""
-  );
   let t13;
-  let t14;
   let div10;
+  let t14;
   let t15;
-  let t16;
   let div14;
   let div12;
-  let t18;
+  let t17;
   let div13;
+  let t18;
   let t19;
-  let t20;
   let div23;
   let div18;
-  let t22;
+  let t21;
   let div20;
   let div19;
+  let t22;
   let t23_value = (
-    /*chainData*/
-    ctx[9].name + ""
-  );
-  let t23;
-  let t24;
-  let t25_value = (
     /*tokenStatsPriceEth*/
     ctx[2] ? (
       /*tokenStatsPriceEth*/
-      ctx[2].toString().substring(0, 6) + " " + /*chainData*/
-      ctx[9].symbol
+      ctx[2].toString().substring(0, 6) + " MATIC"
     ) : "-"
   );
-  let t25;
-  let t26;
+  let t23;
+  let t24;
   let div22;
   let div21;
-  let t27;
-  let t28_value = (
+  let t25;
+  let t26_value = (
     /*tokenStatsPriceUsd*/
     ctx[3] ? "$" + formatWithByDecimalPlaces(Number(
       /*tokenStatsPriceUsd*/
       ctx[3]
     ), 2) : "-"
   );
-  let t28;
-  let t29;
+  let t26;
+  let t27;
   let div43;
-  let div26;
-  let t32;
-  let div29;
-  let t36;
-  let div32;
-  let t40;
-  let div35;
-  let t44;
-  let div39;
-  let div36;
-  let t46;
-  let div38;
-  let img1;
-  let img1_src_value;
-  let t47;
-  let div37;
-  let t48_value = (
-    /*chainData*/
-    ctx[9].name + ""
-  );
-  let t48;
-  let t49;
-  let div42;
   let if_block0 = (
     /*loading*/
     ctx[1] &amp;&amp; create_if_block_6()
@@ -24285,7 +24250,7 @@ function create_if_block(ctx) {
     c() {
       div16 = element("div");
       div1 = element("div");
-      div1.innerHTML = `&lt;div class="field-section-title" style="font-size: 24px;"&gt;Market Insights&lt;/div&gt;`;
+      div1.innerHTML = `&lt;div class="field-section-title text-center" style="font-size: 24px;"&gt;Market Insights&lt;/div&gt;`;
       t1 = space();
       div15 = element("div");
       div5 = element("div");
@@ -24300,7 +24265,7 @@ function create_if_block(ctx) {
       t6 = space();
       div8 = element("div");
       div6 = element("div");
-      t7 = text("NFT Floor ");
+      t7 = text("NFT Floor Price ");
       t8 = text(t8_value);
       t9 = space();
       div7 = element("div");
@@ -24312,67 +24277,42 @@ function create_if_block(ctx) {
       t11 = space();
       div11 = element("div");
       div9 = element("div");
-      t12 = text("Value ");
-      t13 = text(t13_value);
-      t14 = space();
+      div9.textContent = "Value MATIC";
+      t13 = space();
       div10 = element("div");
       if (if_block2)
         if_block2.c();
-      t15 = space();
+      t14 = space();
       if (if_block3)
         if_block3.c();
-      t16 = space();
+      t15 = space();
       div14 = element("div");
       div12 = element("div");
       div12.textContent = "Value USD";
-      t18 = space();
+      t17 = space();
       div13 = element("div");
       if (if_block4)
         if_block4.c();
-      t19 = space();
+      t18 = space();
       if (if_block5)
         if_block5.c();
-      t20 = space();
+      t19 = space();
       div23 = element("div");
       div18 = element("div");
       div18.innerHTML = `&lt;div class="text-lg font-semibold"&gt;Market value&lt;/div&gt;`;
-      t22 = space();
+      t21 = space();
       div20 = element("div");
       div19 = element("div");
+      t22 = text("Polygon\n					");
       t23 = text(t23_value);
       t24 = space();
-      t25 = text(t25_value);
-      t26 = space();
       div22 = element("div");
       div21 = element("div");
-      t27 = text("USD ");
-      t28 = text(t28_value);
-      t29 = space();
+      t25 = text("USD ");
+      t26 = text(t26_value);
+      t27 = space();
       div43 = element("div");
-      div26 = element("div");
-      div26.innerHTML = `&lt;div class="text-lg font-semibold"&gt;Token&lt;/div&gt; &lt;div class="w-6 h-6"&gt;&lt;/div&gt;`;
-      t32 = space();
-      div29 = element("div");
-      div29.innerHTML = `&lt;div class="field-title-alt text-sm text-gray-400"&gt;Name&lt;/div&gt; &lt;div class="text-md font-semibold"&gt;Redbrick&lt;/div&gt;`;
-      t36 = space();
-      div32 = element("div");
-      div32.innerHTML = `&lt;div class="field-title-alt text-sm text-gray-400"&gt;Symbol&lt;/div&gt; &lt;div class="text-md font-semibold"&gt;$BID&lt;/div&gt;`;
-      t40 = space();
-      div35 = element("div");
-      div35.innerHTML = `&lt;div class="field-title-alt text-sm text-gray-400"&gt;Type&lt;/div&gt; &lt;div class="text-md font-semibold"&gt;ERC-404&lt;/div&gt;`;
-      t44 = space();
-      div39 = element("div");
-      div36 = element("div");
-      div36.textContent = "Chain";
-      t46 = space();
-      div38 = element("div");
-      img1 = element("img");
-      t47 = space();
-      div37 = element("div");
-      t48 = text(t48_value);
-      t49 = space();
-      div42 = element("div");
-      div42.innerHTML = `&lt;div class="field-title-alt text-sm text-gray-400"&gt;Release Date&lt;/div&gt; &lt;div class="text-md font-semibold"&gt;May \`24&lt;/div&gt;`;
+      div43.innerHTML = `&lt;div class="flex items-center justify-between"&gt;&lt;div class="text-lg font-semibold"&gt;Token&lt;/div&gt; &lt;div class="w-6 h-6"&gt;&lt;/div&gt;&lt;/div&gt; &lt;div class="mt-4"&gt;&lt;div class="field-title-alt text-sm text-gray-400"&gt;Name&lt;/div&gt; &lt;div class="text-md font-semibold"&gt;Redbrick&lt;/div&gt;&lt;/div&gt; &lt;div class="mt-4"&gt;&lt;div class="field-title-alt text-sm text-gray-400"&gt;Symbol&lt;/div&gt; &lt;div class="text-md font-semibold"&gt;$BID&lt;/div&gt;&lt;/div&gt; &lt;div class="mt-4"&gt;&lt;div class="field-title-alt text-sm text-gray-400"&gt;Type&lt;/div&gt; &lt;div class="text-md font-semibold"&gt;ERC-404&lt;/div&gt;&lt;/div&gt; &lt;div class="mt-4"&gt;&lt;div class="field-title-alt text-sm text-gray-400"&gt;Chain&lt;/div&gt; &lt;div class="text-md font-semibold flex align-middle"&gt;&lt;img style="height: 20px" alt="chain" class="mr-2" src="https://cdn.jsdelivr.net/gh/SmartTokenLabs/resources/images/logos/Polygon.svg"/&gt; &lt;div&gt;Polygon&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;div class="mt-4 mb-8"&gt;&lt;div class="field-title-alt text-sm text-gray-400"&gt;Release Date&lt;/div&gt; &lt;div class="text-md font-semibold"&gt;May \`24&lt;/div&gt;&lt;/div&gt;`;
       attr(div1, "class", "field-section");
       attr(div2, "class", "text-sm text-gray-400");
       attr(div3, "class", "text-md font-semibold field-value");
@@ -24399,19 +24339,6 @@ function create_if_block(ctx) {
       set_style(div23, "background-color", "#181a1d");
       set_style(div23, "border-top", "solid 1px #2d3339");
       set_style(div23, "border-bottom", "solid 1px #2d3339");
-      attr(div26, "class", "flex items-center justify-between");
-      attr(div29, "class", "mt-4");
-      attr(div32, "class", "mt-4");
-      attr(div35, "class", "mt-4");
-      attr(div36, "class", "field-title-alt text-sm text-gray-400");
-      set_style(img1, "height", "20px");
-      attr(img1, "alt", "chain");
-      attr(img1, "class", "mr-2");
-      if (!src_url_equal(img1.src, img1_src_value = "https://cdn.jsdelivr.net/gh/SmartTokenLabs/resources/images/logos/Polygon.svg"))
-        attr(img1, "src", img1_src_value);
-      attr(div38, "class", "text-md font-semibold flex align-middle");
-      attr(div39, "class", "mt-4");
-      attr(div42, "class", "mt-4 mb-8");
       attr(div43, "class", "p-6");
     },
     m(target, anchor) {
@@ -24441,62 +24368,41 @@ function create_if_block(ctx) {
       append(div15, t11);
       append(div15, div11);
       append(div11, div9);
-      append(div9, t12);
-      append(div9, t13);
-      append(div11, t14);
+      append(div11, t13);
       append(div11, div10);
       if (if_block2)
         if_block2.m(div10, null);
-      append(div10, t15);
+      append(div10, t14);
       if (if_block3)
         if_block3.m(div10, null);
-      append(div15, t16);
+      append(div15, t15);
       append(div15, div14);
       append(div14, div12);
-      append(div14, t18);
+      append(div14, t17);
       append(div14, div13);
       if (if_block4)
         if_block4.m(div13, null);
-      append(div13, t19);
+      append(div13, t18);
       if (if_block5)
         if_block5.m(div13, null);
-      insert(target, t20, anchor);
+      insert(target, t19, anchor);
       insert(target, div23, anchor);
       append(div23, div18);
-      append(div23, t22);
+      append(div23, t21);
       append(div23, div20);
       append(div20, div19);
+      append(div19, t22);
       append(div19, t23);
-      append(div19, t24);
-      append(div19, t25);
-      append(div23, t26);
+      append(div23, t24);
       append(div23, div22);
       append(div22, div21);
-      append(div21, t27);
-      append(div21, t28);
-      insert(target, t29, anchor);
+      append(div21, t25);
+      append(div21, t26);
+      insert(target, t27, anchor);
       insert(target, div43, anchor);
-      append(div43, div26);
-      append(div43, t32);
-      append(div43, div29);
-      append(div43, t36);
-      append(div43, div32);
-      append(div43, t40);
-      append(div43, div35);
-      append(div43, t44);
-      append(div43, div39);
-      append(div39, div36);
-      append(div39, t46);
-      append(div39, div38);
-      append(div38, img1);
-      append(div38, t47);
-      append(div38, div37);
-      append(div37, t48);
-      append(div43, t49);
-      append(div43, div42);
     },
     p(ctx2, dirty) {
-      var _a3, _b2;
+      var _a3;
       if (dirty &amp; /*tokenBalance*/
       64 &amp;&amp; t4_value !== (t4_value = /*tokenBalance*/
       ctx2[6] ? formatWithByDecimalPlaces(Number(
@@ -24536,10 +24442,6 @@ function create_if_block(ctx) {
         if_block1.d(1);
         if_block1 = null;
       }
-      if (dirty &amp; /*chainData*/
-      512 &amp;&amp; t13_value !== (t13_value = /*chainData*/
-      (((_b2 = ctx2[9]) == null ? void 0 : _b2.name) ?? "") + ""))
-        set_data(t13, t13_value);
       if (
         /*loading*/
         ctx2[1]
@@ -24549,7 +24451,7 @@ function create_if_block(ctx) {
         else {
           if_block2 = create_if_block_4();
           if_block2.c();
-          if_block2.m(div10, t15);
+          if_block2.m(div10, t14);
         }
       } else if (if_block2) {
         if_block2.d(1);
@@ -24577,7 +24479,7 @@ function create_if_block(ctx) {
         else {
           if_block4 = create_if_block_2();
           if_block4.c();
-          if_block4.m(div13, t19);
+          if_block4.m(div13, t18);
         }
       } else if (if_block4) {
         if_block4.d(1);
@@ -24596,36 +24498,27 @@ function create_if_block(ctx) {
         if_block5.d(1);
         if_block5 = null;
       }
-      if (dirty &amp; /*chainData*/
-      512 &amp;&amp; t23_value !== (t23_value = /*chainData*/
-      ctx2[9].name + ""))
-        set_data(t23, t23_value);
-      if (dirty &amp; /*tokenStatsPriceEth, chainData*/
-      516 &amp;&amp; t25_value !== (t25_value = /*tokenStatsPriceEth*/
+      if (dirty &amp; /*tokenStatsPriceEth*/
+      4 &amp;&amp; t23_value !== (t23_value = /*tokenStatsPriceEth*/
       ctx2[2] ? (
         /*tokenStatsPriceEth*/
-        ctx2[2].toString().substring(0, 6) + " " + /*chainData*/
-        ctx2[9].symbol
+        ctx2[2].toString().substring(0, 6) + " MATIC"
       ) : "-"))
-        set_data(t25, t25_value);
+        set_data(t23, t23_value);
       if (dirty &amp; /*tokenStatsPriceUsd*/
-      8 &amp;&amp; t28_value !== (t28_value = /*tokenStatsPriceUsd*/
+      8 &amp;&amp; t26_value !== (t26_value = /*tokenStatsPriceUsd*/
       ctx2[3] ? "$" + formatWithByDecimalPlaces(Number(
         /*tokenStatsPriceUsd*/
         ctx2[3]
       ), 2) : "-"))
-        set_data(t28, t28_value);
-      if (dirty &amp; /*chainData*/
-      512 &amp;&amp; t48_value !== (t48_value = /*chainData*/
-      ctx2[9].name + ""))
-        set_data(t48, t48_value);
+        set_data(t26, t26_value);
     },
     d(detaching) {
       if (detaching) {
         detach(div16);
-        detach(t20);
+        detach(t19);
         detach(div23);
-        detach(t29);
+        detach(t27);
         detach(div43);
       }
       if (if_block0)
@@ -24660,14 +24553,12 @@ function create_if_block_6(ctx) {
   };
 }
 function create_if_block_5(ctx) {
-  var _a2;
   let t_value = (
     /*nftFloorPrice*/
     ctx[8] &amp;&amp; /*chainData*/
     ctx[9].name ? (
       /*nftStats*/
-      ctx[7].floorPrice + " " + /*chainData*/
-      ((_a2 = ctx[9]) == null ? void 0 : _a2.name)
+      ctx[7].floorPrice + " MATIC"
     ) : "-"
   );
   let t;
@@ -24679,14 +24570,12 @@ function create_if_block_5(ctx) {
       insert(target, t, anchor);
     },
     p(ctx2, dirty) {
-      var _a3;
       if (dirty &amp; /*nftFloorPrice, chainData, nftStats*/
       896 &amp;&amp; t_value !== (t_value = /*nftFloorPrice*/
       ctx2[8] &amp;&amp; /*chainData*/
       ctx2[9].name ? (
         /*nftStats*/
-        ctx2[7].floorPrice + " " + /*chainData*/
-        ((_a3 = ctx2[9]) == null ? void 0 : _a3.name)
+        ctx2[7].floorPrice + " MATIC"
       ) : "-"))
         set_data(t, t_value);
     },
