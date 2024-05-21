@@ -23869,7 +23869,7 @@ function create_if_block_3$1(ctx) {
     c() {
       div1 = element("div");
       div1.innerHTML = `&lt;img style="height: 20px; margin-right: 18px" alt="chain" src="https://cdn.jsdelivr.net/gh/SmartTokenLabs/resources/images/icons/explanation-mark.svg"/&gt; &lt;div&gt;&lt;p class="mb-4"&gt;By sending a fraction of your token, you will risk burning your Redbrick Account and
-								any points, levels and achievements tied to it.&lt;/p&gt; &lt;p&gt;&lt;a target="_blank" href="https://launchpad.smartlayer.network/launch/redbrick" class="underline"&gt;Click to learn more&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;`;
+								any points, levels and achievements tied to it.&lt;/p&gt; &lt;p&gt;&lt;a target="_blank" href="https://medium.com/alphawallet/st404-tokens-users-guide-fc03f60c1d2e" class="underline"&gt;Click to learn more&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;`;
       attr(div1, "class", "field-container flex align-middle");
       set_style(div1, "background", "#ffeff1");
       set_style(div1, "border-radius", "8px");
