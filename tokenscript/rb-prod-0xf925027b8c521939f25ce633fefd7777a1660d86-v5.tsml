@@ -21964,7 +21964,7 @@ function create_if_block_5$2(ctx) {
       attr(img, "alt", "token");
       attr(img, "class", "h-20 w-20 m-2 mr-5 rounded-lg");
       if (!src_url_equal(img.src, img_src_value = /*token*/
-      ctx[0].image_preview_url ?? "https://resources.smartlayer.network/smart-token-store/images/rb-nft-square-new.png"))
+      ctx[0].image_preview_url))
         attr(img, "src", img_src_value);
       attr(div2, "class", "font-bold text-lg mb-1");
       attr(div3, "class", "text-gray-400 text-xs");
@@ -22030,22 +22030,28 @@ function create_if_block_5$2(ctx) {
       if (!mounted) {
         dispose = [
           listen(
-            textarea,
-            "input",
-            /*input_handler*/
+            img,
+            "error",
+            /*handleImageError*/
             ctx[10]
           ),
           listen(
             textarea,
             "input",
-            /*textarea_input_handler*/
+            /*input_handler*/
             ctx[11]
+          ),
+          listen(
+            textarea,
+            "input",
+            /*textarea_input_handler*/
+            ctx[12]
           ),
           listen(
             button,
             "click",
             /*click_handler*/
-            ctx[12]
+            ctx[13]
           )
         ];
         mounted = true;
@@ -22054,7 +22060,7 @@ function create_if_block_5$2(ctx) {
     p(ctx2, dirty) {
       if (dirty &amp; /*token*/
       1 &amp;&amp; !src_url_equal(img.src, img_src_value = /*token*/
-      ctx2[0].image_preview_url ?? "https://resources.smartlayer.network/smart-token-store/images/rb-nft-square-new.png")) {
+      ctx2[0].image_preview_url)) {
         attr(img, "src", img_src_value);
       }
       if (dirty &amp; /*token*/
@@ -22438,13 +22444,13 @@ function create_if_block_1$2(ctx) {
             button0,
             "click",
             /*click_handler_1*/
-            ctx[13]
+            ctx[14]
           ),
           listen(
             button1,
             "click",
             /*click_handler_2*/
-            ctx[14]
+            ctx[15]
           )
         ];
         mounted = true;
@@ -22799,6 +22805,9 @@ function instance$3($$self, $$props, $$invalidate) {
       });
     }
   });
+  const handleImageError = () =&gt; {
+    $$invalidate(0, token.image_preview_url = "https://resources.smartlayer.network/smart-token-store/images/rb-nft-square-new.png", token);
+  };
   const input_handler = (event) =&gt; {
     if (timeout)
       clearTimeout(timeout);
@@ -22830,6 +22839,7 @@ function instance$3($$self, $$props, $$invalidate) {
     ensNameNotFound,
     ensNameAvatarImage,
     setRecievingAddress,
+    handleImageError,
     input_handler,
     textarea_input_handler,
     click_handler,
