@@ -8,7 +8,7 @@
 	<ts:meta>
 		<ts:description xml:lang="en">Brc:ID</ts:description>
 		<ts:aboutUrl xml:lang="en">https://redbrick.land/</ts:aboutUrl>
-		<ts:iconUrl xml:lang="en">https://cdn.jsdelivr.net/gh/SmartTokenLabs/resources/redbrick-logo.svg</ts:iconUrl>
+		<ts:iconUrl xml:lang="en">https://resources.smartlayer.network/smart-token-store/images/rb-nft-square-new.png</ts:iconUrl>
 		<ts:imageUrl xml:lang="en">https://resources.smartlayer.network/smart-token-store/images/rb-nft-square-new.png</ts:imageUrl>
 	</ts:meta>
 	<ts:contract interface="erc721" name="Token">
