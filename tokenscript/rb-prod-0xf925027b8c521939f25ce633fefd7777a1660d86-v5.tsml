@@ -16,7 +16,7 @@
 		
 	</ts:contract>
 	<ts:contract interface="erc20" name="Token20">
-	<ts:address network="137">0xf925027b8c521939f25ce633fefd7777a1660d86</ts:address>
+		<ts:address network="137">0xf925027b8c521939f25ce633fefd7777a1660d86</ts:address>
 		
 	</ts:contract>
 	<ts:origins>
