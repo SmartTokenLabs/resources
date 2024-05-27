@@ -21872,8 +21872,6 @@ function create_if_block_5$2(ctx) {
   let t2;
   let div6;
   let div5;
-  let img;
-  let img_src_value;
   let t3;
   let div4;
   let div2;
@@ -21916,15 +21914,25 @@ function create_if_block_5$2(ctx) {
   let t14;
   let mounted;
   let dispose;
-  let if_block0 = (
+  function select_block_type(ctx2, dirty) {
+    if (
+      /*token*/
+      ctx2[0].image_preview_url
+    )
+      return create_if_block_10$1;
+    return create_else_block;
+  }
+  let current_block_type = select_block_type(ctx);
+  let if_block0 = current_block_type(ctx);
+  let if_block1 = (
     /*loading*/
     ctx[1] === false &amp;&amp; /*ensNameNotFound*/
     ctx[7] === false &amp;&amp; /*receivingAccountAddressViewValue*/
     ctx[6] !== /*receivingAccountAddress*/
     ctx[2] &amp;&amp; create_if_block_8$1(ctx)
   );
-  let if_block1 = show_if &amp;&amp; create_if_block_7$1();
-  let if_block2 = (
+  let if_block2 = show_if &amp;&amp; create_if_block_7$1();
+  let if_block3 = (
     /*ensNameNotFound*/
     ctx[7] &amp;&amp; create_if_block_6$2()
   );
@@ -21938,7 +21946,7 @@ function create_if_block_5$2(ctx) {
       t2 = text("NFT\n					");
       div6 = element("div");
       div5 = element("div");
-      img = element("img");
+      if_block0.c();
       t3 = space();
       div4 = element("div");
       div2 = element("div");
@@ -21952,27 +21960,19 @@ function create_if_block_5$2(ctx) {
       t9 = space();
       textarea = element("textarea");
       t10 = space();
-      if (if_block0)
-        if_block0.c();
-      t11 = space();
       if (if_block1)
         if_block1.c();
-      t12 = space();
+      t11 = space();
       if (if_block2)
         if_block2.c();
+      t12 = space();
+      if (if_block3)
+        if_block3.c();
       t13 = space();
       div10 = element("div");
       button = element("button");
       t14 = text("Review");
       attr(div1, "class", "field-section");
-      attr(img, "alt", "token");
-      attr(img, "class", "h-20 w-20 m-2 mr-5 rounded-lg bg-black");
-      if (!src_url_equal(img.src, img_src_value = /*token*/
-      ctx[0].image_preview_url ? (
-        /*token*/
-        ctx[0].image_preview_url
-      ) : "https://resources.smartlayer.network/smart-token-store/images/rb-nft-square-new.png"))
-        attr(img, "src", img_src_value);
       attr(div2, "class", "font-bold text-lg mb-1");
       attr(div3, "class", "text-gray-400 text-xs");
       set_style(div5, "background", "#212326");
@@ -22004,7 +22004,7 @@ function create_if_block_5$2(ctx) {
       append(div8, t2);
       append(div8, div6);
       append(div6, div5);
-      append(div5, img);
+      if_block0.m(div5, null);
       append(div5, t3);
       append(div5, div4);
       append(div4, div2);
@@ -22022,26 +22022,20 @@ function create_if_block_5$2(ctx) {
         ctx[6]
       );
       append(div8, t10);
-      if (if_block0)
-        if_block0.m(div8, null);
-      append(div8, t11);
       if (if_block1)
         if_block1.m(div8, null);
-      append(div8, t12);
+      append(div8, t11);
       if (if_block2)
         if_block2.m(div8, null);
+      append(div8, t12);
+      if (if_block3)
+        if_block3.m(div8, null);
       insert(target, t13, anchor);
       insert(target, div10, anchor);
       append(div10, button);
       append(button, t14);
       if (!mounted) {
         dispose = [
-          listen(
-            img,
-            "error",
-            /*handleImageError*/
-            ctx[10]
-          ),
           listen(
             textarea,
             "input",
@@ -22065,13 +22059,15 @@ function create_if_block_5$2(ctx) {
       }
     },
     p(ctx2, dirty) {
-      if (dirty &amp; /*token*/
-      1 &amp;&amp; !src_url_equal(img.src, img_src_value = /*token*/
-      ctx2[0].image_preview_url ? (
-        /*token*/
-        ctx2[0].image_preview_url
-      ) : "https://resources.smartlayer.network/smart-token-store/images/rb-nft-square-new.png")) {
-        attr(img, "src", img_src_value);
+      if (current_block_type === (current_block_type = select_block_type(ctx2)) &amp;&amp; if_block0) {
+        if_block0.p(ctx2, dirty);
+      } else {
+        if_block0.d(1);
+        if_block0 = current_block_type(ctx2);
+        if (if_block0) {
+          if_block0.c();
+          if_block0.m(div5, t3);
+        }
       }
       if (dirty &amp; /*token*/
       1 &amp;&amp; t4_value !== (t4_value = /*token*/
@@ -22104,16 +22100,16 @@ function create_if_block_5$2(ctx) {
         ctx2[6] !== /*receivingAccountAddress*/
         ctx2[2]
       ) {
-        if (if_block0) {
-          if_block0.p(ctx2, dirty);
+        if (if_block1) {
+          if_block1.p(ctx2, dirty);
         } else {
-          if_block0 = create_if_block_8$1(ctx2);
-          if_block0.c();
-          if_block0.m(div8, t11);
+          if_block1 = create_if_block_8$1(ctx2);
+          if_block1.c();
+          if_block1.m(div8, t11);
         }
-      } else if (if_block0) {
-        if_block0.d(1);
-        if_block0 = null;
+      } else if (if_block1) {
+        if_block1.d(1);
+        if_block1 = null;
       }
       if (dirty &amp; /*loading, receivingAccountAddress*/
       6)
@@ -22124,31 +22120,31 @@ function create_if_block_5$2(ctx) {
           ctx2[2]
         );
       if (show_if) {
-        if (if_block1)
+        if (if_block2)
           ;
         else {
-          if_block1 = create_if_block_7$1();
-          if_block1.c();
-          if_block1.m(div8, t12);
+          if_block2 = create_if_block_7$1();
+          if_block2.c();
+          if_block2.m(div8, t12);
         }
-      } else if (if_block1) {
-        if_block1.d(1);
-        if_block1 = null;
+      } else if (if_block2) {
+        if_block2.d(1);
+        if_block2 = null;
       }
       if (
         /*ensNameNotFound*/
         ctx2[7]
       ) {
-        if (if_block2)
+        if (if_block3)
           ;
         else {
-          if_block2 = create_if_block_6$2();
-          if_block2.c();
-          if_block2.m(div8, null);
+          if_block3 = create_if_block_6$2();
+          if_block3.c();
+          if_block3.m(div8, null);
         }
-      } else if (if_block2) {
-        if_block2.d(1);
-        if_block2 = null;
+      } else if (if_block3) {
+        if_block3.d(1);
+        if_block3 = null;
       }
       if (dirty &amp; /*formIsInValid*/
       32) {
@@ -22162,14 +22158,79 @@ function create_if_block_5$2(ctx) {
         detach(t13);
         detach(div10);
       }
-      if (if_block0)
-        if_block0.d();
+      if_block0.d();
       if (if_block1)
         if_block1.d();
       if (if_block2)
         if_block2.d();
+      if (if_block3)
+        if_block3.d();
       mounted = false;
       run_all(dispose);
+    }
+  };
+}
+function create_else_block(ctx) {
+  let img;
+  let img_src_value;
+  return {
+    c() {
+      img = element("img");
+      attr(img, "alt", "token");
+      attr(img, "class", "h-20 w-20 m-2 mr-5 rounded-lg bg-black");
+      if (!src_url_equal(img.src, img_src_value = "https://resources.smartlayer.network/smart-token-store/images/rb-nft-square-new.png"))
+        attr(img, "src", img_src_value);
+    },
+    m(target, anchor) {
+      insert(target, img, anchor);
+    },
+    p: noop,
+    d(detaching) {
+      if (detaching) {
+        detach(img);
+      }
+    }
+  };
+}
+function create_if_block_10$1(ctx) {
+  let img;
+  let img_src_value;
+  let mounted;
+  let dispose;
+  return {
+    c() {
+      img = element("img");
+      attr(img, "alt", "token");
+      attr(img, "class", "h-20 w-20 m-2 mr-5 rounded-lg bg-black");
+      if (!src_url_equal(img.src, img_src_value = /*token*/
+      ctx[0].image_preview_url))
+        attr(img, "src", img_src_value);
+    },
+    m(target, anchor) {
+      insert(target, img, anchor);
+      if (!mounted) {
+        dispose = listen(
+          img,
+          "error",
+          /*handleImageError*/
+          ctx[10]
+        );
+        mounted = true;
+      }
+    },
+    p(ctx2, dirty) {
+      if (dirty &amp; /*token*/
+      1 &amp;&amp; !src_url_equal(img.src, img_src_value = /*token*/
+      ctx2[0].image_preview_url)) {
+        attr(img, "src", img_src_value);
+      }
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(img);
+      }
+      mounted = false;
+      dispose();
     }
   };
 }
