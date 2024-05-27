@@ -21968,7 +21968,12 @@ function create_if_block_5$2(ctx) {
       attr(img, "alt", "token");
       attr(img, "class", "h-20 w-20 m-2 mr-5 rounded-lg bg-black");
       if (!src_url_equal(img.src, img_src_value = /*token*/
-      ctx[0].image_preview_url ?? "https://resources.smartlayer.network/smart-token-store/images/rb-nft-square-new.png"))
+      ctx[0].image_preview_url !== "" || /*token*/
+      ctx[0].image_preview_url !== null || /*token*/
+      ctx[0].image_preview_url !== void 0 ? (
+        /*token*/
+        ctx[0].image_preview_url
+      ) : "https://resources.smartlayer.network/smart-token-store/images/rb-nft-square-new.png"))
         attr(img, "src", img_src_value);
       attr(div2, "class", "font-bold text-lg mb-1");
       attr(div3, "class", "text-gray-400 text-xs");
@@ -22064,7 +22069,12 @@ function create_if_block_5$2(ctx) {
     p(ctx2, dirty) {
       if (dirty &amp; /*token*/
       1 &amp;&amp; !src_url_equal(img.src, img_src_value = /*token*/
-      ctx2[0].image_preview_url ?? "https://resources.smartlayer.network/smart-token-store/images/rb-nft-square-new.png")) {
+      ctx2[0].image_preview_url !== "" || /*token*/
+      ctx2[0].image_preview_url !== null || /*token*/
+      ctx2[0].image_preview_url !== void 0 ? (
+        /*token*/
+        ctx2[0].image_preview_url
+      ) : "https://resources.smartlayer.network/smart-token-store/images/rb-nft-square-new.png")) {
         attr(img, "src", img_src_value);
       }
       if (dirty &amp; /*token*/
