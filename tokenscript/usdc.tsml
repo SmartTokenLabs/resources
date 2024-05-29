@@ -7,8 +7,8 @@
 	</ts:label>
 	<ts:meta>
 		<ts:description xml:lang="en">ERC20 template</ts:description>
-		<ts:aboutUrl xml:lang="en">https://chain.link/</ts:aboutUrl>
-		<ts:iconUrl xml:lang="en">https://assets-global.website-files.com/5f6b7190899f41fb70882d08/5f760a499b56c47b8fa74fbb_chainlink-logo.svg</ts:iconUrl>
+		<ts:aboutUrl xml:lang="en">https://coinmarketcap.com/currencies/usd-coin/</ts:aboutUrl>
+		<ts:iconUrl xml:lang="en">https://cdn.jsdelivr.net/gh/SmartTokenLabs/resources/images/logos/usd-coin-usdc-logo.svg</ts:iconUrl>
 	</ts:meta>
 	<ts:contract interface="erc20" name="Token">
 		
