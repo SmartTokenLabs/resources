@@ -20943,7 +20943,7 @@ const chainConfig = {
   }
 };
 function create_if_block$3(ctx) {
-  var _a2, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m, _n;
+  var _a2, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r2, _s2;
   let div7;
   let div2;
   let div0;
@@ -20977,7 +20977,7 @@ function create_if_block$3(ctx) {
     /*apiToken*/
     (((_c = ctx[0].keyValueAttributes) == null ? void 0 : _c.Level) ? (
       /*apiToken*/
-      (_d = ctx[0].keyValueAttributes) == null ? void 0 : _d.Level.value
+      (_e = (_d = ctx[0].keyValueAttributes) == null ? void 0 : _d.Level) == null ? void 0 : _e.value
     ) : "-") + ""
   );
   let t9;
@@ -20988,10 +20988,10 @@ function create_if_block$3(ctx) {
   let p5;
   let t13_value = (
     /*apiToken*/
-    (((_e = ctx[0].keyValueAttributes) == null ? void 0 : _e.Point) ? Math.trunc(
+    (((_f = ctx[0].keyValueAttributes) == null ? void 0 : _f.Point) ? Math.trunc(Number(
       /*apiToken*/
-      (_f = ctx[0].keyValueAttributes) == null ? void 0 : _f.Point.value
-    ) : "-") + ""
+      (_h = (_g = ctx[0].keyValueAttributes) == null ? void 0 : _g.Point) == null ? void 0 : _h.value
+    )) : "-") + ""
   );
   let t13;
   let t14;
@@ -21017,9 +21017,9 @@ function create_if_block$3(ctx) {
   let div14;
   let t30_value = (
     /*apiToken*/
-    (((_g = ctx[0].keyValueAttributes) == null ? void 0 : _g.Rank) ? (
+    (((_i = ctx[0].keyValueAttributes) == null ? void 0 : _i.Rank) ? (
       /*apiToken*/
-      (_h = ctx[0].keyValueAttributes) == null ? void 0 : _h.Rank.value
+      (_k = (_j = ctx[0].keyValueAttributes) == null ? void 0 : _j.Rank) == null ? void 0 : _k.value
     ) : "-") + ""
   );
   let t30;
@@ -21029,16 +21029,16 @@ function create_if_block$3(ctx) {
   let t33;
   let div20;
   let div17;
-  let t34_value = Math.trunc(
+  let t34_value = Math.trunc(Number(
     /*apiToken*/
-    (_j = (_i = ctx[0].keyValueAttributes) == null ? void 0 : _i.Exp) == null ? void 0 : _j.value
-  ) + "";
+    ((_m = (_l = ctx[0].keyValueAttributes) == null ? void 0 : _l.Exp) == null ? void 0 : _m.value) ?? 0
+  )) + "";
   let t34;
   let t35;
-  let t36_value = (
+  let t36_value = Number(
     /*apiToken*/
-    ((_l = (_k = ctx[0].keyValueAttributes) == null ? void 0 : _k.Exp) == null ? void 0 : _l.max_value) + ""
-  );
+    ((_o = (_n = ctx[0].keyValueAttributes) == null ? void 0 : _n.Exp) == null ? void 0 : _o.max_value) ?? 0
+  ) + "";
   let t36;
   let t37;
   let t38;
@@ -21060,9 +21060,9 @@ function create_if_block$3(ctx) {
   let div26;
   let t47_value = (
     /*apiToken*/
-    (((_m = ctx[0].keyValueAttributes) == null ? void 0 : _m.Point) ? Math.trunc(
+    (((_p = ctx[0].keyValueAttributes) == null ? void 0 : _p.Point) ? Math.trunc(
       /*apiToken*/
-      (_n = ctx[0].keyValueAttributes) == null ? void 0 : _n.Point.value
+      (_r2 = (_q = ctx[0].keyValueAttributes) == null ? void 0 : _q.Point) == null ? void 0 : _r2.value
     ) : "-") + ""
   );
   let t47;
@@ -21076,7 +21076,7 @@ function create_if_block$3(ctx) {
   ctx[0].image &amp;&amp; create_if_block_2$3();
   let if_block2 = (
     /*apiToken*/
-    ctx[0].keyValueAttributes["Referral Code"].value &amp;&amp; create_if_block_1$3(ctx)
+    ((_s2 = ctx[0].keyValueAttributes["Referral Code"]) == null ? void 0 : _s2.value) &amp;&amp; create_if_block_1$3(ctx)
   );
   return {
     c() {
@@ -21326,7 +21326,7 @@ function create_if_block$3(ctx) {
       }
     },
     p(ctx2, dirty) {
-      var _a3, _b2, _c2, _d2, _e2, _f2, _g2, _h2, _i2, _j2, _k2, _l2, _m2, _n2;
+      var _a3, _b2, _c2, _d2, _e2, _f2, _g2, _h2, _i2, _j2, _k2, _l2, _m2, _n2, _o2, _p2, _q2, _r3, _s3;
       if (
         /*apiToken*/
         ctx2[0].image
@@ -21372,36 +21372,38 @@ function create_if_block$3(ctx) {
       1 &amp;&amp; t9_value !== (t9_value = /*apiToken*/
       (((_c2 = ctx2[0].keyValueAttributes) == null ? void 0 : _c2.Level) ? (
         /*apiToken*/
-        (_d2 = ctx2[0].keyValueAttributes) == null ? void 0 : _d2.Level.value
+        (_e2 = (_d2 = ctx2[0].keyValueAttributes) == null ? void 0 : _d2.Level) == null ? void 0 : _e2.value
       ) : "-") + ""))
         set_data(t9, t9_value);
       if (dirty &amp; /*apiToken*/
       1 &amp;&amp; t13_value !== (t13_value = /*apiToken*/
-      (((_e2 = ctx2[0].keyValueAttributes) == null ? void 0 : _e2.Point) ? Math.trunc(
+      (((_f2 = ctx2[0].keyValueAttributes) == null ? void 0 : _f2.Point) ? Math.trunc(Number(
         /*apiToken*/
-        (_f2 = ctx2[0].keyValueAttributes) == null ? void 0 : _f2.Point.value
-      ) : "-") + ""))
+        (_h2 = (_g2 = ctx2[0].keyValueAttributes) == null ? void 0 : _g2.Point) == null ? void 0 : _h2.value
+      )) : "-") + ""))
         set_data(t13, t13_value);
       if (dirty &amp; /*apiToken*/
       1 &amp;&amp; t30_value !== (t30_value = /*apiToken*/
-      (((_g2 = ctx2[0].keyValueAttributes) == null ? void 0 : _g2.Rank) ? (
+      (((_i2 = ctx2[0].keyValueAttributes) == null ? void 0 : _i2.Rank) ? (
         /*apiToken*/
-        (_h2 = ctx2[0].keyValueAttributes) == null ? void 0 : _h2.Rank.value
+        (_k2 = (_j2 = ctx2[0].keyValueAttributes) == null ? void 0 : _j2.Rank) == null ? void 0 : _k2.value
       ) : "-") + ""))
         set_data(t30, t30_value);
       if (dirty &amp; /*apiToken*/
-      1 &amp;&amp; t34_value !== (t34_value = Math.trunc(
+      1 &amp;&amp; t34_value !== (t34_value = Math.trunc(Number(
         /*apiToken*/
-        (_j2 = (_i2 = ctx2[0].keyValueAttributes) == null ? void 0 : _i2.Exp) == null ? void 0 : _j2.value
-      ) + ""))
+        ((_m2 = (_l2 = ctx2[0].keyValueAttributes) == null ? void 0 : _l2.Exp) == null ? void 0 : _m2.value) ?? 0
+      )) + ""))
         set_data(t34, t34_value);
       if (dirty &amp; /*apiToken*/
-      1 &amp;&amp; t36_value !== (t36_value = /*apiToken*/
-      ((_l2 = (_k2 = ctx2[0].keyValueAttributes) == null ? void 0 : _k2.Exp) == null ? void 0 : _l2.max_value) + ""))
+      1 &amp;&amp; t36_value !== (t36_value = Number(
+        /*apiToken*/
+        ((_o2 = (_n2 = ctx2[0].keyValueAttributes) == null ? void 0 : _n2.Exp) == null ? void 0 : _o2.max_value) ?? 0
+      ) + ""))
         set_data(t36, t36_value);
       if (
         /*apiToken*/
-        ctx2[0].keyValueAttributes["Referral Code"].value
+        (_p2 = ctx2[0].keyValueAttributes["Referral Code"]) == null ? void 0 : _p2.value
       ) {
         if (if_block2) {
           if_block2.p(ctx2, dirty);
@@ -21416,9 +21418,9 @@ function create_if_block$3(ctx) {
       }
       if (dirty &amp; /*apiToken*/
       1 &amp;&amp; t47_value !== (t47_value = /*apiToken*/
-      (((_m2 = ctx2[0].keyValueAttributes) == null ? void 0 : _m2.Point) ? Math.trunc(
+      (((_q2 = ctx2[0].keyValueAttributes) == null ? void 0 : _q2.Point) ? Math.trunc(
         /*apiToken*/
-        (_n2 = ctx2[0].keyValueAttributes) == null ? void 0 : _n2.Point.value
+        (_s3 = (_r3 = ctx2[0].keyValueAttributes) == null ? void 0 : _r3.Point) == null ? void 0 : _s3.value
       ) : "-") + ""))
         set_data(t47, t47_value);
     },
@@ -21528,6 +21530,7 @@ function create_if_block_2$3(ctx) {
   };
 }
 function create_if_block_1$3(ctx) {
+  var _a2;
   let div6;
   let div0;
   let t1;
@@ -21537,7 +21540,7 @@ function create_if_block_1$3(ctx) {
   let div1;
   let t2_value = (
     /*apiToken*/
-    ctx[0].keyValueAttributes["Referral Code"].value + ""
+    ((_a2 = ctx[0].keyValueAttributes["Referral Code"]) == null ? void 0 : _a2.value) + ""
   );
   let t2;
   let t3;
@@ -21551,6 +21554,7 @@ function create_if_block_1$3(ctx) {
   let dispose;
   return {
     c() {
+      var _a3;
       div6 = element("div");
       div0 = element("div");
       div0.textContent = "Referral Code";
@@ -21576,7 +21580,7 @@ function create_if_block_1$3(ctx) {
       attr(div3, "class", "col-span-3 flex items-center justify-center");
       attr(a, "target", "_blank");
       attr(a, "href", a_href_value = `https://twitter.com/intent/tweet?text=Join https://redbrick.land/, here's my referral code ${/*apiToken*/
-      ctx[0].keyValueAttributes["Referral Code"].value}`);
+      (_a3 = ctx[0].keyValueAttributes["Referral Code"]) == null ? void 0 : _a3.value}`);
       attr(a, "class", "twitter-share-button relative w-full h-[56px] border-[1px] font-semibold border-solid bg-[#1c2026] flex items-center justify-center border-[#313841] rounded-[2px] px-[24px]");
       attr(div4, "class", "col-span-2 flex items-center justify-center");
       attr(div5, "class", "grid grid-cols-5 gap-4");
@@ -21610,13 +21614,14 @@ function create_if_block_1$3(ctx) {
       }
     },
     p(ctx2, dirty) {
+      var _a3, _b;
       if (dirty &amp; /*apiToken*/
       1 &amp;&amp; t2_value !== (t2_value = /*apiToken*/
-      ctx2[0].keyValueAttributes["Referral Code"].value + ""))
+      ((_a3 = ctx2[0].keyValueAttributes["Referral Code"]) == null ? void 0 : _a3.value) + ""))
         set_data(t2, t2_value);
       if (dirty &amp; /*apiToken*/
       1 &amp;&amp; a_href_value !== (a_href_value = `https://twitter.com/intent/tweet?text=Join https://redbrick.land/, here's my referral code ${/*apiToken*/
-      ctx2[0].keyValueAttributes["Referral Code"].value}`)) {
+      (_b = ctx2[0].keyValueAttributes["Referral Code"]) == null ? void 0 : _b.value}`)) {
         attr(a, "href", a_href_value);
       }
     },
@@ -21720,34 +21725,31 @@ function instance$4($$self, $$props, $$invalidate) {
     $$invalidate(1, loading = false);
   });
   function formatAttributesToKeyValueData() {
-    apiToken.attributes.forEach((attribute, index) =&gt; {
-      if (index === 0)
-        $$invalidate(0, apiToken.keyValueAttributes = {}, apiToken);
+    apiToken.attributes.forEach((attribute) =&gt; {
       if (attribute.trait_type) {
         $$invalidate(0, apiToken.keyValueAttributes[attribute.trait_type] = attribute, apiToken);
       }
     });
   }
   async function getProfile() {
+    $$invalidate(0, apiToken = {
+      name: "",
+      image: void 0,
+      keyValueAttributes: {
+        "Referral Code": { value: void 0 },
+        Rank: { value: 0 },
+        Point: { value: 0 },
+        Level: { value: "0 Unranked" },
+        Exp: { value: 0, max_value: 100 }
+      }
+    });
     try {
       const profileRequest = await fetch(`https://api-dev.redbrick.land/v1/nft-profiles/${token.tokenId}?chainId=${token.chainId}`);
       const profileResp = await profileRequest.json();
-      $$invalidate(0, apiToken = profileResp);
+      $$invalidate(0, apiToken = { ...apiToken, ...profileResp });
       formatAttributesToKeyValueData();
-      console.log("apiToken", apiToken);
     } catch (error) {
       console.log("couldn't find profile");
-      $$invalidate(0, apiToken = {
-        name: "",
-        image: void 0,
-        keyValueAttributes: {
-          "Referral Code": { value: void 0 },
-          Rank: { value: 0 },
-          Point: { value: 0 },
-          Level: { value: "0 Unranked" },
-          Exp: { value: 0, max_value: 100 }
-        }
-      });
     }
   }
   function calcWidth() {
