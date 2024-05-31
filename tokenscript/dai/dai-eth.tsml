@@ -7,7 +7,7 @@
 	</ts:label>
 	<ts:meta>
 		<ts:description xml:lang="en">DAI</ts:description>
-		<ts:aboutUrl xml:lang="en">https://coinmarketcap.com/currencies/multi-collateral-dai/</ts:aboutUrl>
+		<ts:aboutUrl xml:lang="en">https://chain.link/</ts:aboutUrl>
 		<ts:iconUrl xml:lang="en">https://cdn.jsdelivr.net/gh/SmartTokenLabs/resources/images/logos/dai-logo.svg</ts:iconUrl>
 		<ts:imageUrl xml:lang="en">https://cdn.jsdelivr.net/gh/SmartTokenLabs/resources/images/logos/dai-logo-with-text.png</ts:imageUrl>
 	</ts:meta>
