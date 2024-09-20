@@ -9,6 +9,7 @@
 		<ts:description xml:lang="en">PEPE TokenScript</ts:description>
 		<ts:aboutUrl xml:lang="en">https://cdn.jsdelivr.net/gh/SmartTokenLabs/resources/images/logos/pepe-avatar.png</ts:aboutUrl>
 		<ts:iconUrl xml:lang="en">https://cdn.jsdelivr.net/gh/SmartTokenLabs/resources/images/logos/pepe-avatar.png</ts:iconUrl>
+		<ts:imageUrl xml:lang="en">https://cdn.jsdelivr.net/gh/SmartTokenLabs/resources/images/logos/pepe-avatar.png</ts:imageUrl>
 	</ts:meta>
 	<ts:contract interface="erc20" name="Token">
 		<ts:address network="1">0x6982508145454ce325ddbe47a25d4ec3d2311933</ts:address>
